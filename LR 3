@@ -1,0 +1,37 @@
+// Завдання 1
+function random(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+
+
+
+// Завдання 2
+function isPrime(num) {
+  if (num <= 1) return false;
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) return false;
+  }
+  return true;
+}
+
+
+
+
+// Завдання 3
+function sumToN(n) {
+  if (n >= 0) {
+    let sum = 0;
+    for (let i = 1; i <= n; i++) {
+      sum += i;
+    }
+    return sum;
+  } else {
+    let sum = 0;
+    for (let i = 1; i >= n; i--) {
+      sum += i;
+    }
+    return sum;
+  }
+}
+
