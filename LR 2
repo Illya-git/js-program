@@ -1,26 +1,21 @@
 // Завдання 1
-let user = {};          // Створити порожній об'єкт
-user.name = "Марк";     // Додати властивість name
-user.surname = "Сміт";  // Додати властивість surname
-user.name = "Тарас";    // Змінити значення name
-delete user.name;       // Видалити властивість name
+let user = {};          
+user.name = "Марк";     
+user.surname = "Сміт";  
+user.name = "Тарас";    
+delete user.name;       
 
 
 
 // Завдання 2
 function isEmpty(obj) {
   for (let key in obj) {
-    return false;  // Якщо є хоча б одна властивість
+    return false;  
   }
-  return true;     // Якщо об'єкт порожній
+  return true;     
 }
 
-// Приклад використання:
-let emptyObj = {};
-console.log(isEmpty(emptyObj)); // true
 
-let nonEmptyObj = {test: 1};
-console.log(isEmpty(nonEmptyObj)); // false
 
 
 
@@ -49,12 +44,7 @@ function multiplyNumeric(obj) {
   }
 }
 
-// Приклад використання:
-let menu = {
-  width: 200,
-  height: 300,
-  title: "Меню"
-};
+
 
 multiplyNumeric(menu);
 
