@@ -1,0 +1,28 @@
+// Завдання 1 
+let styles = ["Jazz", "Blues"];
+styles.push("Rock-n-Roll");
+styles[Math.floor((styles.length - 1) / 2)] = "Classics";
+alert(styles.shift());
+styles.unshift("Rap", "Reggae");
+
+// Завдання 2
+function sumInput() {
+  let numbers = [];
+  while (true) {
+    let value = prompt("Введіть число", "");
+    if (value === "" || value === null || isNaN(value)) break;
+    numbers.push(+value);
+  }
+  return numbers.reduce((sum, num) => sum + num, 0);
+}
+
+// Завдання 3 
+function getMaxSubSum(arr) {
+  let maxSum = 0;
+  let currentSum = 0;
+  for (let num of arr) {
+    currentSum = Math.max(0, currentSum + num);
+    maxSum = Math.max(maxSum, currentSum);
+  }
+  return maxSum;
+}
