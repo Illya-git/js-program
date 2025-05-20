@@ -1,0 +1,28 @@
+// Завдання 1
+function unique(arr) {
+  return Array.from(new Set(arr));
+}
+
+// Завдання 2
+function aclean(arr) {
+  let map = new Map();
+  for (let word of arr) {
+    let sorted = word.toLowerCase().split("").sort().join("");
+    map.set(sorted, word);
+  }
+  return Array.from(map.values());
+}
+
+// Завдання 3
+function countOccurrences(arr) {
+  let map = new Map();
+  for (let item of arr) {
+    map.set(item, (map.get(item) || 0) + 1);
+  }
+  return map;
+}
+
+// Завдання 4
+function areElementsUnique(arr) {
+  return new Set(arr).size === arr.length;
+}
