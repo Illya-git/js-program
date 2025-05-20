@@ -1,0 +1,23 @@
+function ucFirst(str) {
+  if (!str) return str;
+  return str[0].toUpperCase() + str.slice(1);
+}
+
+function checkSpam(str) {
+  const lowerStr = str.toLowerCase();
+  return lowerStr.includes("росі") || lowerStr.includes("xxx");
+}
+
+function truncate(str, maxlength) {
+  return str.length > maxlength
+    ? str.slice(0, maxlength - 1) + "…"
+    : str;
+}
+
+function strikeStr(str) {
+  const words = str.split(" ");
+  if (words.length > 3) {
+    return words.slice(0, 3).join(" ") + "\n" + words.slice(3).join(" ");
+  }
+  return str;
+}
