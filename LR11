@@ -1,0 +1,44 @@
+function increaseScore() {
+  score++;
+
+  // Збільшуємо швидкість м'яча кожні 10 очок
+  if (score % 10 === 0) {
+    ball.speed++;
+    // Підлаштовуємо напрямок м'яча відповідно до нової швидкості
+    ball.dy = ball.dy > 0 ? ball.speed : -ball.speed;
+  }
+
+  // Після проходження всіх блоків — показати їх знову
+  if (score % (brickRowCount * brickColumnCount) === 0) {
+    showAllBricks();
+  }
+}
+// Завдання 2
+function drawBricks() {
+  bricks.forEach(column => {
+    column.forEach(brick => {
+      ctx.beginPath();
+      ctx.arc(
+        brick.x + brick.w / 2, // Центр круга по x
+        brick.y + brick.h / 2, // Центр круга по y
+        brick.h / 2,           // Радіус круга
+        0,
+        Math.PI * 2
+      );
+      ctx.fillStyle = brick.visible ? "#0095dd" : "transparent";
+      ctx.fill();
+      ctx.closePath();
+    });
+  });
+}
+// Завдання 3
+function drawScore() {
+  ctx.font = "20px Arial";
+  ctx.fillStyle = "#000";
+
+  if (score >= 25) {
+    ctx.fillText("ІПЗ найкращі!!!", canvas.width / 2 - 80, 30);
+  } else {
+    ctx.fillText(`Score: ${score}`, canvas.width - 120, 30);
+  }
+}
