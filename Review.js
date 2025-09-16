@@ -6,7 +6,7 @@ const Review = () => {
   const [index, setIndex] = useState(0);
   const { name, job, image, text } = people[index];
 
-  // перевірка меж індекса
+  
   const checkNumber = (number) => {
     if (number > people.length - 1) {
       return 0;
@@ -17,7 +17,7 @@ const Review = () => {
     return number;
   };
 
-  // наступна картка
+  
   const nextPerson = () => {
     setIndex((index) => {
       let newIndex = index + 1;
@@ -25,7 +25,7 @@ const Review = () => {
     });
   };
 
-  // попередня картка
+  
   const prevPerson = () => {
     setIndex((index) => {
       let newIndex = index - 1;
@@ -33,11 +33,11 @@ const Review = () => {
     });
   };
 
-  // випадкова картка (Surprise Me)
+  
   const randomPerson = () => {
     let randomIndex = Math.floor(Math.random() * people.length);
     if (randomIndex === index) {
-      randomIndex = index + 1; // щоб не повторював поточний
+      randomIndex = index + 1; 
     }
     setIndex(checkNumber(randomIndex));
   };
