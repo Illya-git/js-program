@@ -1,0 +1,101 @@
+:root {
+  --transition: all 0.3s linear;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f1f5f8;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.section {
+  width: 90vw;
+  margin: 5rem auto;
+  text-align: center;
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.title h2 {
+  text-transform: uppercase;
+  color: #102a42;
+}
+
+.section-center {
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+}
+
+article {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+article.activeSlide {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+article.lastSlide {
+  transform: translateX(-100%);
+}
+
+article.nextSlide {
+  transform: translateX(100%);
+}
+
+.person-img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.text {
+  color: #617d98;
+  max-width: 35em;
+  margin: 0 auto;
+}
+
+.icon {
+  font-size: 2rem;
+  color: #c59d5f;
+  margin-top: 1rem;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 200px;
+  background: transparent;
+  border-color: transparent;
+  font-size: 2rem;
+  color: #c59d5f;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.prev:hover,
+.next:hover {
+  color: #222;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
